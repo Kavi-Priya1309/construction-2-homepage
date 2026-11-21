@@ -1,0 +1,232 @@
+:root {
+  --navy: #243344;
+  --navy-deep: #1b2733;
+  --yellow: #f4c03b;
+  --gray: #8b8b8b;
+  --light: #f1f1f1;
+  --white: #ffffff;
+  --font-head: 'Poppins', 'Segoe UI', sans-serif;
+  --font-body: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #000;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-head);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 95%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+  scroll-margin-top: 90px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  border: 0;
+  padding: 15px 40px;
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn--header {
+  background: #fff;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px 30px;
+}
+
+.btn--header:hover {
+  background: var(--navy);
+  color: var(--yellow);
+}
+
+.btn--service {
+  display: table;
+  margin: 75px auto -45px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn--service:hover {
+  background: var(--yellow);
+  color: var(--navy);
+}
+
+.btn--consultation {
+  background: #fff;
+  color: var(--navy);
+  font-size: 20px;
+  padding: 16px 40px;
+  white-space: nowrap;
+}
+
+.btn--consultation:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn--submit {
+  align-self: flex-start;
+  margin-top: 22px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn--submit:hover {
+  background: var(--yellow);
+  color: var(--navy);
+}
+
+/* Section headings */
+.sec-head {
+  position: relative;
+  z-index: 1;
+}
+
+.sec-head__eyebrow {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--yellow);
+}
+
+.sec-head__title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000;
+}
+
+.sec-head--center {
+  text-align: center;
+}
+
+.sec-head--left {
+  text-align: left;
+}
+
+.sec-head__shape {
+  position: absolute;
+  top: -54px;
+  font-family: var(--font-head);
+  font-size: 140px;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(244, 192, 59, 0.1);
+  letter-spacing: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  user-select: none;
+}
+
+.sec-head--left .sec-head__shape {
+  right: 60px;
+}
+
+.sec-head--center .sec-head__shape {
+  left: 50%;
+  transform: translate(-50%, -40%);
+}

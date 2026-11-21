@@ -1,0 +1,18 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+.env
+.env.local
+
+# Unrelated pre-existing design folders
+/01_Brand_Identity/
+/02_Desktop_Design/
+/03_Tablet_Design/
+/04_Mobile_Design/
+/05_Product_Assets/
+/06_SVG_Exports/
+/07_Prototype/
+/08_3D_Assets/
