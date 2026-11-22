@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 import { departments } from '../data/siteData'
 
@@ -47,7 +48,13 @@ export default function QuoteForm() {
   return (
     <section id="quote" className="section section--quote">
       <div className="container quote__grid">
-        <div className="quote__panel">
+        <motion.div
+          className="quote__panel"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <span className="sec-head__shape" aria-hidden="true">
             QUOTE
           </span>
@@ -58,11 +65,23 @@ export default function QuoteForm() {
             branding in today’s world can’t be ignored, We hope that the above Construction Slogans.
             Don’t forget to share it on social media.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="quote__form-wrap">
+        <motion.div
+          className="quote__form-wrap"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+        >
           {sent ? (
-            <div className="quote__success" role="status">
+            <motion.div
+              className="quote__success"
+              role="status"
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+            >
               <CheckCircle2 size={44} strokeWidth={1.5} aria-hidden="true" />
               <h3>Thank you, {values.name.trim().split(' ')[0]}!</h3>
               <p>
@@ -79,7 +98,7 @@ export default function QuoteForm() {
               >
                 Send another request
               </button>
-            </div>
+            </motion.div>
           ) : (
             <form className="quote-form" onSubmit={handleSubmit} noValidate>
               <div className="quote-form__row">
@@ -169,7 +188,7 @@ export default function QuoteForm() {
               </button>
             </form>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

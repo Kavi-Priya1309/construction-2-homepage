@@ -142,10 +142,15 @@ a {
 }
 
 .btn--service {
-  display: table;
-  margin: 75px auto -45px;
+  display: inline-block;
+  margin: 50px auto -24px;
   background: var(--navy);
   color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 38px;
+  box-shadow: 0 10px 30px rgba(36, 51, 68, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .btn--service:hover {
@@ -162,8 +167,8 @@ a {
 }
 
 .btn--consultation:hover {
-  background: var(--navy);
-  color: #fff;
+  background: var(--yellow);
+  color: var(--navy);
 }
 
 .btn--submit {
@@ -174,8 +179,9 @@ a {
 }
 
 .btn--submit:hover {
-  background: var(--yellow);
+  background: #ffffff;
   color: var(--navy);
+  box-shadow: 0 10px 25px rgba(36, 51, 68, 0.15);
 }
 
 /* Section headings */
@@ -229,4 +235,133 @@ a {
 .sec-head--center .sec-head__shape {
   left: 50%;
   transform: translate(-50%, -40%);
+}
+
+/* ============ CORE KEYFRAMES & MOTION GRAPHICS ============ */
+
+/* Social Icons 360 rotation */
+@keyframes socialFxF {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navigation Dropdown Reveal */
+@keyframes MenuMoveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Menu Items Zoom Reveal */
+@keyframes Codevz_Zoom_Out {
+  0% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Checkmark List Wobble Skew */
+@keyframes stylishListWobbleSkew {
+  16.65% {
+    transform: skew(-12deg);
+  }
+  33.3% {
+    transform: skew(10deg);
+  }
+  49.95% {
+    transform: skew(-6deg);
+  }
+  66.6% {
+    transform: skew(4deg);
+  }
+  83.25% {
+    transform: skew(-2deg);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+
+/* Service Card Hover Bob & Float */
+@keyframes hvr-bob-float {
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hvr-bob {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Service Card Diagonal Light Shine Sweep */
+@keyframes fx_shine {
+  0% {
+    left: -90%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+/* Back to Top Arrow Fly-Through */
+@keyframes cz_rotate_y {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Hero Play Button Pulse Ripple */
+@keyframes heroPlayPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 192, 59, 0.6), 0 0 0 10px #e9eaec;
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(244, 192, 59, 0), 0 0 0 10px #e9eaec;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 192, 59, 0), 0 0 0 10px #e9eaec;
+  }
+}
+
+/* Prefers Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

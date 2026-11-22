@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion'
 import { clientLogos } from '../data/siteData'
 
 export default function ClientLogos() {
   return (
     <section className="logos" aria-label="Clients">
-      <div className="logos__strip">
+      <motion.div
+        className="logos__strip"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="logos__inner">
           {clientLogos.map((logo) => (
             <a
@@ -13,17 +20,29 @@ export default function ClientLogos() {
               title="Construction Company"
               aria-label="See projects for this client"
             >
-              <img
-                src={logo.src}
-                width={logo.width}
-                height={logo.height}
-                alt={logo.alt}
-                loading="lazy"
-              />
+              <div className="logos__flip-wrap">
+                <img
+                  className="logos__img-main"
+                  src={logo.src}
+                  width={logo.width}
+                  height={logo.height}
+                  alt={logo.alt}
+                  loading="lazy"
+                />
+                <img
+                  className="logos__img-hover"
+                  src={logo.src}
+                  width={logo.width}
+                  height={logo.height}
+                  alt={logo.alt}
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+              </div>
             </a>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

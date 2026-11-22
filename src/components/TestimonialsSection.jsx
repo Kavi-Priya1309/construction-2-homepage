@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import SectionTitle from './SectionTitle'
 import { testimonials } from '../data/siteData'
 
@@ -52,20 +53,31 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="section section--testimonials">
       <div className="container">
-        <SectionTitle
-          eyebrow="SEE WHAT SAYS OUR HAPPY CLIENTS"
-          title="Our happy customers"
-          shape="TESTIMONIALS"
-          align="center"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <SectionTitle
+            eyebrow="SEE WHAT SAYS OUR HAPPY CLIENTS"
+            title="Our happy customers"
+            shape="TESTIMONIALS"
+            align="center"
+          />
+        </motion.div>
 
-        <div
+        <motion.div
           className="testimonials"
           role="region"
           aria-roledescription="carousel"
           aria-label="Customer testimonials"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
         >
           <div className="testimonials__viewport">
           <div
@@ -119,7 +131,7 @@ export default function TestimonialsSection() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

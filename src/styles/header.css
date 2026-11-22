@@ -49,10 +49,15 @@
 .topbar__social a {
   display: inline-flex;
   color: #9aa4ae;
+  transition: color 0.25s ease;
 }
 
 .topbar__social a:hover {
   color: var(--yellow);
+}
+
+.topbar__social a:hover svg {
+  animation: socialFxF 0.4s cubic-bezier(0.9, 0.05, 0.1, 1) forwards;
 }
 
 /* ---------- Main header ---------- */
@@ -125,8 +130,8 @@
   height: 2px;
   background: var(--yellow);
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  transform-origin: bottom;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .main-nav__item:hover > .main-nav__link,
@@ -143,7 +148,7 @@
 }
 
 .main-nav__caret {
-  transition: transform 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .main-nav__item:hover > .main-nav__link .main-nav__caret {
@@ -166,8 +171,8 @@
   box-shadow: 0 14px 34px rgba(36, 51, 68, 0.14);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(14px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.9, 0.05, 0.1, 1), visibility 0.3s;
   z-index: 40;
 }
 
@@ -176,6 +181,12 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  animation: MenuMoveDown 0.4s cubic-bezier(0.9, 0.05, 0.1, 1);
+}
+
+.main-nav__item:hover > .sub-menu > li,
+.sub-menu__item:hover > .sub-menu > li {
+  animation: Codevz_Zoom_Out 0.45s cubic-bezier(0.9, 0.05, 0.1, 1) forwards;
 }
 
 .sub-menu .sub-menu {
@@ -441,6 +452,11 @@
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.offcanvas__social a:hover svg {
+  animation: socialFxF 0.4s cubic-bezier(0.9, 0.05, 0.1, 1) forwards;
 }
 
 /* ---------- Search overlay ---------- */
@@ -454,8 +470,11 @@
   position: absolute;
   inset: 0;
   border: 0;
-  background: rgba(20, 28, 37, 0.6);
+  background: rgba(20, 28, 37, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .search-overlay__panel {
@@ -466,6 +485,8 @@
   padding: 46px 46px 40px;
   background: #fff;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  transform-origin: top center;
+  animation: MenuMoveDown 0.35s cubic-bezier(0.9, 0.05, 0.1, 1);
 }
 
 .search-overlay__close {

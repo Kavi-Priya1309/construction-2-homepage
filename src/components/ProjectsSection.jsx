@@ -1,4 +1,5 @@
-import { Maximize2 } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ExternalLink } from 'lucide-react'
 import SectionTitle from './SectionTitle'
 import { projects } from '../data/siteData'
 
@@ -6,16 +7,30 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section section--projects">
       <div className="container">
-        <SectionTitle
-          eyebrow="WE ARE PROFESSIONAL"
-          title="Our latest projects"
-          shape="SERVICES"
-          align="center"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <SectionTitle
+            eyebrow="WE ARE PROFESSIONAL"
+            title="Our latest projects"
+            shape="SERVICES"
+            align="center"
+          />
+        </motion.div>
 
         <div className="projects__grid">
-          {projects.map((project) => (
-            <article key={project.id} className="project-card">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.id}
+              className="project-card"
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.55, delay: (index % 4) * 0.1, ease: 'easeOut' }}
+            >
               <a href="#quote" className="project-card__link" aria-label={`View project ${project.title}`}>
                 <img
                   src={project.image}
@@ -26,13 +41,13 @@ export default function ProjectsSection() {
                 />
                 <div className="project-card__overlay">
                   <span className="project-card__icon" aria-hidden="true">
-                    <Maximize2 size={24} strokeWidth={1.6} />
+                    <ExternalLink size={20} strokeWidth={2.4} />
                   </span>
                   <h3>{project.title}</h3>
                   <p>{project.categories}</p>
                 </div>
               </a>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

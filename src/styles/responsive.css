@@ -173,6 +173,23 @@
     width: 52%;
   }
 
+  .hero__shape-slot--a {
+    left: calc(50% + 107px);
+  }
+
+  .hero__shape-slot--b {
+    left: calc(50% + 198px);
+  }
+
+  .hero__shape-slot--solid {
+    left: calc(50% + 289px);
+  }
+
+  .hero__shape {
+    width: 1215px;
+    height: 668px;
+  }
+
   .hero__banners {
     padding-top: 70px;
   }
@@ -234,12 +251,22 @@
     padding: 26px 22px;
   }
 
+  .feature-card__back-title,
   .feature-card__back h3 {
     font-size: 20px;
+    margin-bottom: 14px;
   }
 
+  .feature-card__back-desc,
   .feature-card__back p {
     font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .feature-card__link {
+    padding: 10px 24px;
+    font-size: 14px;
   }
 
   .about__grid {
@@ -275,7 +302,7 @@
   }
 
   .service-card {
-    margin: 0 6px;
+    margin: 0 6px 36px;
     padding: 36px 20px 0;
   }
 
@@ -295,7 +322,7 @@
   }
 
   .btn--service {
-    margin: 32px auto -32px;
+    margin: 32px auto -18px;
     padding: 11px 24px;
     font-size: 14px;
   }
@@ -403,7 +430,13 @@
     gap: 22px 28px;
   }
 
-  .logos__item img {
+  .logos__flip-wrap {
+    height: 60px;
+  }
+
+  .logos__item img,
+  .logos__img-main,
+  .logos__img-hover {
     max-height: 54px;
   }
 
@@ -512,6 +545,23 @@
     width: 70%;
   }
 
+  .hero__shape-slot--a {
+    left: calc(50% + 66px);
+  }
+
+  .hero__shape-slot--b {
+    left: calc(50% + 122px);
+  }
+
+  .hero__shape-slot--solid {
+    left: calc(50% + 178px);
+  }
+
+  .hero__shape {
+    width: 749px;
+    height: 412px;
+  }
+
   .hero__nav {
     bottom: 12px;
     gap: 10px;
@@ -604,7 +654,25 @@
     padding: 22px 24px;
   }
 
+  .feature-card__back {
+    padding: 30px 24px;
+  }
+
+  .feature-card__back-title,
+  .feature-card__back h3 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .feature-card__back-desc,
   .feature-card__back p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .feature-card__link {
+    padding: 11px 26px;
     font-size: 14px;
   }
 
@@ -632,7 +700,7 @@
   .service-card {
     width: 100%;
     max-width: 430px;
-    margin: 0 auto 18px;
+    margin: 0 auto 36px;
     padding: 38px 24px 0;
   }
 
@@ -827,7 +895,13 @@
     flex: 1 1 28%;
   }
 
-  .logos__item img {
+  .logos__flip-wrap {
+    height: 40px;
+  }
+
+  .logos__item img,
+  .logos__img-main,
+  .logos__img-hover {
     max-height: 34px;
   }
 
